@@ -30,7 +30,8 @@
 
                                 <br>
 
-                                <button  class="btn btn-outline-warning">Actualizar</button>
+                                <button  class="btn btn-outline-warning">
+                                    <span class="fas fa-edit"></span>Actualizar</button>
 
                             </form>
                         </div>

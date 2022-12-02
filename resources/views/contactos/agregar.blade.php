@@ -19,10 +19,19 @@
                     <div class="row ">
                         <div class="col-sm-12">
 
-                            <form action="" method="post">
+                            <form action="{{ route('contacto.store') }}" method="post">
+
+                                @csrf
+                                @method('POST ')
 
                                 <label for="categoria">Categoria:</label>
-                                <select name="categoria" id="categoria" class="form-select">
+                                <select name="categoria" id="categoria" class="form-select" required>
+
+                                    @foreach ($categorias as $item )
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="{{ $item->id_categoria }}">{{ $item->nombre }}</option>
+
+                                    @endforeach
 
                                 </select>
 
@@ -44,7 +53,8 @@
 
                                 <br>
 
-                                <button  class="btn btn-outline-primary">Agregar</button>
+                                <button  class="btn btn-outline-primary">
+                                    <span class="fas fa-user-plus"></span> Agregar</button>
 
                             </form>
                         </div>

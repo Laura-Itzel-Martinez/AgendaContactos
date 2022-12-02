@@ -34,7 +34,7 @@
 
                                 <br>
 
-                                <button  class="btn btn-outline-primary">Agregar</button>
+                                <button  class="btn btn-outline-primary"><span class="fas fa-plus-square"></span> Agregar</button>
 
                             </form>
                         </div>

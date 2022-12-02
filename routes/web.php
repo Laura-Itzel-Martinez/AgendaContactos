@@ -33,6 +33,9 @@ Route::prefix('categorias')->group(function () {
 Route::prefix('contactos')->group(function () {
     Route::get('/', [ContactosController::class, 'index'])->name('contacto.index');
     Route::get('/agregar', [ContactosController::class, 'create'])->name('contacto.create');
-    Route::get('/editar', [ContactosController::class, 'edit'])->name('contacto.edit');
-    Route::get('/eliminar', [ContactosController::class, 'show'])->name('contacto.show');
+    Route::get('/editar/{id}', [ContactosController::class, 'edit'])->name('contacto.edit');
+    Route::get('/eliminar/{id}', [ContactosController::class, 'show'])->name('contacto.show');
+    Route::post('/guardar', [ContactosController::class, 'store'])->name('contacto.store');
+    Route::put('/actualizar/{id}', [ContactosController::class, 'update'])->name('contacto.update');
+    Route::delete('/destruir/{id}', [ContactosController::class, 'destroy'])->name('contacto.destroy');
  });

@@ -13,7 +13,7 @@
 
                             <h2 >Categorias</h2>
                             <a href="{{ route('categoria.create') }}" class="btn btn-info">
-                                Agregar categoria</a>
+                                <span class="fas fa-plus-square"></span> Agregar categoria</a>
                             <hr>
 
                             @if ($mensaje = Session::get('success'))
@@ -26,17 +26,17 @@
                         </div>
                     </div>
 
-                    <div class="row text-center">
+                    <div class="row ">
                         <div class="col-sm-12">
 
                             <div class="table-responsive">
-                                <table class="table table-primary">
+                                <table class="table table-primary" id="tablaCategorias">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Descripción</th>
-                                            <th scope="col">Editar</th>
-                                            <th scope="col">Eliminar</th>
+                                            <th scope="col" class="text-center">Nombre</th>
+                                            <th scope="col" class="text-center">Descripción</th>
+                                            <th scope="col" class="text-center">Editar</th>
+                                            <th scope="col" class="text-center">Eliminar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -45,13 +45,15 @@
 
 
                                             <tr class="">
-                                                <td scope="row">{{ $item->nombre }}</td>
-                                                <td>{{ $item->descripcion}}</td>
-                                                <td>
-                                                    <a href="{{ route('categoria.edit', $item->id_categoria) }}" class="btn btn-warning btn-sm">editar</a>
+                                                <td scope="row" class="text-center">{{ $item->nombre }}</td>
+                                                <td class="text-center">{{ $item->descripcion}}</td>
+                                                <td class="text-center">
+                                                    <a href="{{ route('categoria.edit', $item->id_categoria) }}" class="btn btn-warning btn-sm">
+                                                        <span class="fas fa-edit"></span></a>
                                                 </td>
-                                                <td>
-                                                    <a href="{{ route('categoria.show', $item->id_categoria) }}" class="btn btn-danger btn-sm">eliminar</a>
+                                                <td class="text-center">
+                                                    <a href="{{ route('categoria.show', $item->id_categoria) }}" class="btn btn-danger btn-sm">
+                                                        <span class="fas fa-trash-alt"></span></a>
                                                 </td>
                                             </tr>
 
@@ -69,5 +71,15 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('dataTable')
+
+    <script>
+        $(document).ready(function(){
+            $('#tablaCategorias').DataTable();
+        })
+    </script>
 
 @endsection
