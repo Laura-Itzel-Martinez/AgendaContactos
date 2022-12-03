@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="co-sm-12">
 
-                            <h2 >Agenda de contactos con laravel 8</h2>
+                            <h2 class="text-center" >Agenda de contactos con laravel 8</h2>
 
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                     <div class="row text-center">
                         <div class="col-sm-12">
                             <img src="{{ asset('img/foto.png') }}" class="" alt="" width="30%" >
-                            <p>
+                            <p> By Itzel Martinez
                             </p>
                         </div>
                     </div>

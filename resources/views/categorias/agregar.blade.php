@@ -22,7 +22,6 @@
                             <form action="{{ route('categoria.store') }}" method="post">
 
                               <!--csrf es un token en laravel y el metodo es post  -->
-
                               @csrf
                               @method('POST')
 
